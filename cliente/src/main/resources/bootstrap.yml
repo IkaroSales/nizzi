@@ -1,11 +1,11 @@
 spring:
   application:
     name: cliente
-  profiles:
-    active: default
-  cloud:
-    vault:      token: 00000000-0000-0000-0000-000000000000
-      scheme: http
+#  profiles:
+#    active: default
+#  cloud:
+#    vault:#      token: 00000000-0000-0000-0000-000000000000
+#      scheme: http
     config:
-      token: 00000000-0000-0000-0000-000000000000
+#      token: 00000000-0000-0000-0000-000000000000
       uri: http://localhost:8888
