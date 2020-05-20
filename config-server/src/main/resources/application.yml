@@ -1,0 +1,9 @@
+server:
+  port: 8888
+  
+spring:
+  profiles:    active: vault, git
+  cloud:    config:      server:
+        vault:
+          host: 127.0.0.1          port: 8200        git:          uri: https://github.com/IkaroSales/nizzi
+          search-paths: config-data
