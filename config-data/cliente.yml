@@ -12,6 +12,6 @@ spring:
     show-sql: true              # Show or not log for each sql query
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL5Dial
+        dialect: org.hibernate.dialect.MySQL5Dialect
     hibernate:
       ddl-auto: update          # Schema will be automatically updated accordingly to java entities found
