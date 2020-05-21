@@ -1,10 +1,21 @@
-server:
-  port: 8888
-  
 spring:
+  application:
+    name: config-server
   profiles:#    active: vault, git
     active: git
   cloud:    config:      server:
 #        vault:
-#          host: 127.0.0.1#          port: 8200        git:          uri: https://github.com/IkaroSales/nizzi
+#          host: 127.0.0.1#          port: 8200        git:          uri: https://github.com/IkaroSales/nizzi-backend
           search-paths: config-data
+
+server:
+  port: 8888
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/

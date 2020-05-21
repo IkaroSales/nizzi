@@ -1,7 +1,5 @@
 package com.nizzi.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +20,7 @@ import com.nizzi.repository.ClienteRepository;
 public class ClienteController {
 
 	private ClienteRepository clienteDAO;
-
+	
 	@Autowired
 	public ClienteController(ClienteRepository clienteDAO) {
 		this.clienteDAO = clienteDAO;
@@ -36,6 +34,11 @@ public class ClienteController {
 	@GetMapping("/{id}")
 	public ResponseEntity<?> getClienteById(@PathVariable("id") Long id) {
 		return new ResponseEntity<>(clienteDAO.findById(id), HttpStatus.OK);
+	}
+	
+	@GetMapping("/{name}")
+	public ResponseEntity<?> getClienteByName(@PathVariable("nome") String nome) {
+		return new ResponseEntity<>(clienteDAO.findByNome(nome), HttpStatus.OK);
 	}
 
 	@PostMapping

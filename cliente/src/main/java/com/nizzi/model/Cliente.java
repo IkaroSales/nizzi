@@ -9,14 +9,15 @@ import javax.persistence.Id;
 public class Cliente {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	private String nome;
 
 	private String email;
 
-	public Cliente() {}
+	public Cliente() {
+		super();
+	}
 
 	public Cliente(Long id, String nome, String email) {
 		super();
